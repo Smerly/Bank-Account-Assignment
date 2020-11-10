@@ -1,5 +1,24 @@
-class BankAccount:
+from random import choice
 
+numba = ['1', '2', '3', '4', '5', '6', '7', '8']
+
+one = choice(numba)
+two = choice(numba)
+three = choice(numba)
+four = choice(numba)
+five = choice(numba)
+six = choice(numba)
+seven = choice(numba)
+eight = choice(numba)
+
+fullNumba = [one, two, three, four, five, six, seven, eight]
+
+fullNumbaString = ''.join(fullNumba)
+
+fullNumbaFinal = int(fullNumbaString)
+
+
+class BankAccount:
     def __init__(self, full_name, account_number, routing_number, balance):
         self.full_name = full_name
         self.account_number = account_number
@@ -28,7 +47,6 @@ class BankAccount:
     def print_receipt(self):
         safe = []
         for i in range(len(str(self.account_number))):
-            # Take
             if i <= 3:
 
                 safe.append('*')
@@ -42,7 +60,7 @@ class BankAccount:
         print(f'Balance: ${float(self.balance)}')
 
 
-bing_bong = BankAccount('Bing Bong', 17742013, 123456789, 0)
+bing_bong = BankAccount('Bing Bong', fullNumbaFinal, 123456789, 0)
 
 bing_bong.deposit(100)
 
