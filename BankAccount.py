@@ -1,5 +1,7 @@
 from random import choice
 
+# Making the randomizer variable
+
 numba = ['1', '2', '3', '4', '5', '6', '7', '8']
 
 one = choice(numba)
@@ -18,12 +20,16 @@ fullNumbaString = ''.join(fullNumba)
 fullNumbaFinal = int(fullNumbaString)
 
 
+# ------------------------------------------------------------------------------------------------------------------------------
+
+# Class
+
 class BankAccount:
     def __init__(self, full_name, account_number, routing_number, balance):
         self.full_name = full_name
         self.account_number = account_number
         self.routing_number = routing_number
-        self.balance = balance
+        self.balance = 0
 
     def deposit(self, amount):
         self.balance += amount
@@ -45,6 +51,9 @@ class BankAccount:
         self.balance = round(self.balance * 1.00083, 2)
 
     def print_receipt(self):
+
+        # Making the Account number's first 4 numbers asterisks
+
         safe = []
         for i in range(len(str(self.account_number))):
             if i <= 3:
@@ -58,6 +67,8 @@ class BankAccount:
         print(f'Account No.: {asterisks}')
         print(f'Routing No.: {self.routing_number}')
         print(f'Balance: ${float(self.balance)}')
+
+# Making it work
 
 
 bing_bong = BankAccount('Bing Bong', fullNumbaFinal, 123456789, 0)
